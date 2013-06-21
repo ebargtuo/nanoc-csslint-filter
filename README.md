@@ -2,7 +2,7 @@
 
 A filter to lint CSS files using 
 [CSSLint](http://csslint.net/)
-(via [execcsslint](https://github.com/dgholz/execcsslint) in
+(via [execcsslint](https://github.com/dgholz/execcsslint)) in
 [Nanoc](http://nanoc.ws).
 
 ## Installation ##
