@@ -7,13 +7,13 @@ class CSSLintFilter < Nanoc::Filter
   type :text
 
   def run(content, params={})
-    messages = CSSLint.run(content).error_messages
-
-    "csslint: #{item.identifier.chop}.#{item[:extension]}", messages unless messages.empty?
-
+    result = CSSLint.run(content)
+    
+    puts "csslint: #{item.identifier.chop}.#{item[:extension]}", result.error_messages unless result.error_messages.empty?
+    
     # Don't raise an exception by default since CSS will generally work.
     if params[:strict]
-        raise RuntimeError, "csslint: fatal error" unless result.valid?
+        raise RuntimeError, "csslint: fatal error\n#{result.error_messages.select{|m| m =~ /error/}}" unless result.valid?
     end
 
     # A textual filter should return the content (in our case unchanged).
