@@ -34,6 +34,12 @@ Use the filter in `compile` rules as necessary. Examples:
 If CSSLint has nothing to report, the filter produces no output.
 If there are any messages from CSSLint, they are output to `STDOUT`.
 
+### Options ###
+
+    :strict => true
+
+Forces Nanoc to raise an exception on a CSSLint **error**.
+
 ## Notes and Issues ##
 
 The filter uses [execcsslint](https://github.com/dgholz/execcsslint),
