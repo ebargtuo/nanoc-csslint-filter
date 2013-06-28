@@ -23,12 +23,11 @@ If necessary, re-run `bundle install`.
 Use the filter in `compile` rules as necessary. Examples:
 
     compile '/css/*' do
-            # Apply other filters.
-            # filter ...
+        # Apply other filters.
+        # filter ...
 
-            # Apply csslint filter.
-            filter :csshint
-        end
+        # Apply csslint filter.
+        filter :csshint
     end
 
 If CSSLint has nothing to report, the filter produces no output.
